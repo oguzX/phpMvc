@@ -1,0 +1,14 @@
+/*Global Start*/
+.clear{
+    clear: both;
+}
+/*Global End*/
+/*Navigation Start*/
+.nav  li{
+    width: 100px !important;
+}
+.nav ul > li {
+    width: 100px;
+    float: left;
+}
+/*Navigation End*/
