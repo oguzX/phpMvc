@@ -12,4 +12,9 @@ class defaultController extends controller
         $data['text'] = 'Ana sayfadan merhaba!';
         $this->render('index',$data);
     }
+    public function  aboutmeAction(){
+        $data['title'] = 'Benim hakkımdakiler Sayfası';
+        $data['text'] = 'Benim hakkımda';
+        $this->render('aboutme',$data);
+    }
 }

@@ -7,7 +7,7 @@
 require VDIR."/header.php";
 ?>
 <div class="container-fluid">
-    <div class="h1">Index Sayfamdan sa</div>
+    <div class="h1">Benim hakkımda  Sayfamdan sa</div>
 </div>
 <?php
 require VDIR."/footer.php";

@@ -24,5 +24,7 @@ require CORE_DIR.'/app.php';
 require CORE_DIR.'/model.php';
 require CORE_DIR.'/view.php';
 require CORE_DIR.'/controller.php';
+
+
 $app = new app();
 $app->run();

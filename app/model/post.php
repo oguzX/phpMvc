@@ -8,6 +8,7 @@
 class post extends model
 {
     public function getAll(){
-        return $this->fetchAll('SELECT * FROM post');
+        $query = $this->query('SELECT * FROM posts');
+        return $query;
     }
 }

@@ -6,9 +6,7 @@
 /*Navigation Start*/
 .nav  li{
     width: 100px !important;
-}
-.nav ul > li {
-    width: 100px;
-    float: left;
+    float:left;
+    padding: 5px;
 }
 /*Navigation End*/
