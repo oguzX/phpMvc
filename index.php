@@ -14,11 +14,12 @@ define('VDIR',APP_DIR.'/view');
 define('URL','http://localhost/blog');
 define('ASSETS_DIR',URL.'/assets');
 define('CSSDIR',ASSETS_DIR.'/css');
-define('JSDIR',ASSETS_DIR.'/assets');
+define('JSDIR',ASSETS_DIR.'/js');
 
 define('DB_DSN','mysql:host=localhost;dbname=blog;charset=utf8');
 define('DB_USR','root');
 define('DB_PWD','');
+
 
 require CORE_DIR.'/app.php';
 require CORE_DIR.'/model.php';
