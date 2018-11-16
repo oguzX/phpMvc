@@ -7,6 +7,5 @@
     <link rel="stylesheet" href="<?php echo CSSDIR."/style.css";?>">
 </head>
 <body>
-<?php
-require VDIR.'/navigation.php';
-?>
+<?php require LDIR.'/navigation.php'; ?>
+<div class="container">

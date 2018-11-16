@@ -7,7 +7,7 @@
 
 class app
 {
-    public $action, $controller, $params;
+    public $action, $controller, $params, $auth;
 
     public function __construct()
     {

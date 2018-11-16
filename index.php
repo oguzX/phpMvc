@@ -15,16 +15,20 @@ define('URL','http://localhost/blog');
 define('ASSETS_DIR',URL.'/assets');
 define('CSSDIR',ASSETS_DIR.'/css');
 define('JSDIR',ASSETS_DIR.'/js');
+define('IMGDIR',ASSETS_DIR.'/images');
+define('LDIR',VDIR.'/layout');
 
 define('DB_DSN','mysql:host=localhost;dbname=blog;charset=utf8');
 define('DB_USR','root');
 define('DB_PWD','');
 
+session_start();
 
 require CORE_DIR.'/app.php';
 require CORE_DIR.'/model.php';
 require CORE_DIR.'/view.php';
 require CORE_DIR.'/controller.php';
+require CORE_DIR.'/auth.php';
 
 
 $app = new app();

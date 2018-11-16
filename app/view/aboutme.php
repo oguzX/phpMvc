@@ -4,10 +4,8 @@
  * Date: 10/24/2018
  * Time: 1:04 AM
  */
-require VDIR."/header.php";
+require LDIR."/header.php";
 ?>
-<div class="container-fluid">
     <div class="h1">Benim hakkımda  Sayfamdan sa</div>
-</div>
 <?php
-require VDIR."/footer.php";
+require LDIR."/footer.php";

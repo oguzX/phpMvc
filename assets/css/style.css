@@ -3,10 +3,59 @@
     clear: both;
 }
 /*Global End*/
-/*Navigation Start*/
+/*Navigation Begin*/
+.nav{
+}
 .nav  li{
-    width: 100px !important;
     float:left;
     padding: 5px;
 }
+.nav .display-4{
+    font-size: 1.5rem;
+}
+.nav .userBtn:hover .logoutBtn{
+    display: block;
+    animation-name: hoverEffect;
+    animation-duration: 100ms;
+    right: -30px;
+}
+.nav .logoutBtn{
+    position: absolute;
+    top:0;
+    line-height: 3.1rem;
+    display: none;
+}
 /*Navigation End*/
+
+/*FontSize Begin*/
+.font-size-07{
+    font-size: 0.7em;
+}
+.font-size-2{
+    font-size: 2em;
+}
+.font-size-3{
+    font-size: 3em;
+}
+.font-size-4{
+    font-size: 4em;
+}
+.font-size-5{
+    font-size: 5em;
+}
+/*FontSize End*/
+
+
+/*Animations Begin*/
+@keyframes hoverEffect {
+    from {
+        right: 0;
+    rgba(52, 58, 64, 0);
+    }
+    to {
+        right: -30px;
+        display: block;
+    rgba(52, 58, 64, 1)
+    }
+}
+/*Animations End*/

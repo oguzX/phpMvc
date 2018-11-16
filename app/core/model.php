@@ -35,7 +35,7 @@ class model
             if(count($params)>0){
                 foreach ($params as $param){
                     $explodedParamRow = explode(":",$param);
-                    $this->sQuery->bindParam($explodedParamRow[0],$explodedParamRow[1]);
+                    $this->sQuery->bindParam(':'.$explodedParamRow[0],$explodedParamRow[1]);
                 }
             }
         }catch (PDOException $e) {
