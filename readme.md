@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 # Project Title
+=======
+## MVC Blog Project
+
+This project is my first mvc experience.
+>>>>>>> aee50ae85148b60ff9defbf971fefc57779bf198
 
 One Paragraph of project description goes here
 
