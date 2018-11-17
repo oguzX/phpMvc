@@ -6,6 +6,5 @@
  */
 require LDIR."/header.php";
 ?>
-    <div class="h1">Index Sayfamdan sa</div>
 <?php
 require LDIR."/footer.php";

@@ -7,6 +7,11 @@
 
 class controller
 {
+    private $auth;
+    function __construct()
+    {
+        $this->auth= new auth();
+    }
     public function render($file,array $params = []){
         return view::render($file,$params);
     }
@@ -27,5 +32,9 @@ class controller
     }
     public static function url(){
         return URL.'/?url='.implode('/',func_get_args());
+    }
+    public function getAuth()
+    {
+        return $this->auth;
     }
 }

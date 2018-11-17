@@ -48,9 +48,9 @@ class model
         $this->Init($query,$params);
         $rawStatment = explode(" ",$query);
         $statement = strtolower($rawStatment[0]);
-        if($statement === 'select' || 'show') {
+        if($statement === 'select' || $statement === 'show') {
             return $this->sQuery->fetchAll($fetchmode);
-        } else if ($statement === 'inset' || $statement === 'update' || $statement === 'delete') {
+        } else if ($statement === 'insert' || $statement === 'update' || $statement === 'delete') {
             return $this->sQuery->rowCount();
         } else{
             return NULL;

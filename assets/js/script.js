@@ -11,7 +11,7 @@ function getSiteUrl() {
     for (var i = 0;i<urlRaw.length-2;i++){
         url += urlRaw[i] +"/";
     }
-    return url;
+    return "http://localhost/blog";
 }
 
 function navHighlight(elem, home,active) {
@@ -28,18 +28,22 @@ function navHighlight(elem, home,active) {
 }
 
 function checkInput(elem) {
-    var emptyInputCounter = 0;
-    var inputs = document.querySelectorAll(elem);
-        for (var i = 0; i < inputs.length; i++){
-            if(inputs[i].value.trim()== ''){
-                inputs[i].classList.add('border-danger');
-                inputs[i].addEventListener("click",function(){
-                    alert();
-                });
-                emptyInputCounter++;
-            }
+    var countEmptyInput = 0;
+    $(elem+" input[type=text]").each(function () {
+        if($(this).val()==''){
+            $(this).addClass('border-danger').click('click',function () {
+                $(this).removeClass('border-danger');
+            });
         }
-        return emptyInputCounter;
+    });
+    $(elem + " textarea").each(function () {
+        if($(this).val()==''){
+            $(this).addClass('border-danger').click('click', function () {
+                $(this).removeClass('border-danger');
+            });
+        }
+    });
+    return countEmptyInput;
 }
 
 function ajax(data,method,url) {
@@ -58,3 +62,33 @@ function ajax(data,method,url) {
         }
     });
 }
+
+$("#postaddButton").on('click',function () {
+    var formName ="#"+$(this).parent().parent().attr("id");
+    var emptyNumber = checkInput(formName);
+    if(emptyNumber==0){
+        var post = $.post(siteURL+"/post/postaddNow",{"title":$(formName+" input[name='title']").val(),"text":$(formName+" textarea").val()});
+        post.done(function (result) {
+            if(result==1){
+                window.location = siteURL+"/post/post";
+            }else{
+                alert('Failed!');
+            }
+        });
+    }
+});
+$("#posteditButton").on('click',function () {
+    var formName ="#"+$(this).parent().parent().attr("id");
+    var postid = $("#postid").val();
+    var emptyNumber = checkInput(formName);
+    if(emptyNumber==0){
+        var post = $.post(siteURL+"/post/posteditNow",{"title":$(formName+" input[name='title']").val(),"text":$(formName+" textarea").val(),"postId":postid});
+        post.done(function (result) {
+            if(result==1){
+                window.location = siteURL+"/post/post";
+            }else{
+                alert(result);
+            }
+        });
+    }
+});

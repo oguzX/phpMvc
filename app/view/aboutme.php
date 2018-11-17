@@ -5,7 +5,5 @@
  * Time: 1:04 AM
  */
 require LDIR."/header.php";
-?>
-    <div class="h1">Benim hakkımda  Sayfamdan sa</div>
-<?php
+
 require LDIR."/footer.php";

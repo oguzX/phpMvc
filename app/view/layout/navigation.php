@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs">
     <li>
-        <h6 class="mt-1 ml-3 display-4">Zugneon Blog <span class="text-muted font-size-07">beta</span></h6>
+        <a href="<?php echo URL;?>/default/index"><h6 class="mt-1 ml-3 display-4 text-dark">Zugneon Blog <span class="text-muted font-size-07">beta</span></h6></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="<?php echo URL;?>/default/index">Home</a>

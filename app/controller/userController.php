@@ -17,11 +17,18 @@ class userController extends controller
             $username = trim($_POST['username']);
             $password = trim($_POST['password']);
             $authModel = new authmodel();
-            if(count($authModel->checkInformationsIsTrue($username,$password))>0){
-                $_SESSION['login']=$username;
+            if(count($userInfo = $authModel->checkInformationsIsTrue($username,$password))>0){
+                $_SESSION['login']=$userInfo[0]['user_id'].':'.$username.':'.$userInfo[0]['user_type'];
                 $this->redirect(URL."/");
             }
         }
+    }
+    public function profileAction(){
+        $data['title'] = "Profile";
+        $auth = $this->getAuth();
+        $data['userName'] = $auth->getUserName();
+        $data['userType'] = $auth->getUserTypeText();
+        $this->render("profile",$data);
     }
     public function logoutAction(){
         session_destroy();

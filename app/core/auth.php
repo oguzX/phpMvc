@@ -9,22 +9,45 @@ class auth
 {
     static private $loggedIn = false,
         $database,
+        $userId,
         $userType,
         $userName;
-    static public function isLoggedIn(){
-        if(!empty($_SESSION)){
-            self::$loggedIn= true;
+
+    public function __construct()
+    {
+        if (self::isLoggedIn()) {
+            $userinfo = explode(":", $_SESSION['login']);
+            self::$userId = $userinfo[0];
+            self::$userName = $userinfo[1];
+            self::$userType = $userinfo[2];
+        }
+    }
+
+    static public function isLoggedIn()
+    { //checking for user is logged
+        if (!empty($_SESSION['login'])) {
+            self::$loggedIn = true;
         }
         return self::$loggedIn;
     }
-    private function connectDatabase(){
+
+    private function connectDatabase()
+    {
         $this->database = new authmodel();
     }
-    public static function login(){
-        $_SESSION['login']=1;
+
+    public static function getUserName()
+    {
+        return self::$userName;
     }
-    public static function logout(){
-        session_destroy();
-        self::$loggedIn=false;
+
+    public static function getUserId()
+    {
+        return self::$userId;
+    }
+    public static function getUserTypeText()
+    {
+        $userTypes = array('','Admin','Editor','Reader');
+        return $userTypes[self::$userType];
     }
 }

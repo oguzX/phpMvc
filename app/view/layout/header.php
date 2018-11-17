@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <title><?php echo isset($title) ? $title : 'MVC Blog' ?></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo CSSDIR."/style.css";?>">
 </head>
 <body>
 <?php require LDIR.'/navigation.php'; ?>
-<div class="container">
+<div class="container pt-5">
+    <?php   if(!empty($title)){
+        echo '<div class="display-4 mb-4 border-bottom">'.$title.'</div>';
+    }?>
+
