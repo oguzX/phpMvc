@@ -19,9 +19,9 @@ class post extends model
         $query = $this->query('SELECT * FROM posts WHERE post_id=:postid ',["postid:$postid"]);
         return $query;
     }
-    public function addPost($title,$text){
+    public function addPost($title,$text,$owner){
         $dataTime = date('d/m/Y');
-        $addQuery = $this->query("INSERT into posts (post_title,post_text,post_date) VALUES (:title,:text,:datetime) ",["title:$title","text:$text","datetime:$dataTime"]);
+        $addQuery = $this->query("INSERT into posts (post_title,post_text,post_owner,post_date) VALUES (:title,:text,:owner,:datetime) ",["title:$title","text:$text","owner:$owner","datetime:$dataTime"]);
         echo $addQuery;
     }
     public function updatePost($title,$text,$postid){

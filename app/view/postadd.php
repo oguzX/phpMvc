@@ -5,10 +5,10 @@
  * Time: 1:04 AM
  */
 require LDIR."/header.php";
-$postData= $postData[0];
 ?>
     <form action="<?php echo URL;?>/post/addnow" method="post" id="postaddForm">
         <?php if(isset($postData)) {
+            $postData= $postData[0];
             ?>
             <input type="hidden" id="postid" value="<?php echo $postData['post_id'];?>">
             <?php

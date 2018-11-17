@@ -34,6 +34,7 @@ function checkInput(elem) {
             $(this).addClass('border-danger').click('click',function () {
                 $(this).removeClass('border-danger');
             });
+            countEmptyInput++;
         }
     });
     $(elem + " textarea").each(function () {
@@ -41,6 +42,7 @@ function checkInput(elem) {
             $(this).addClass('border-danger').click('click', function () {
                 $(this).removeClass('border-danger');
             });
+            countEmptyInput++;
         }
     });
     return countEmptyInput;
@@ -72,7 +74,7 @@ $("#postaddButton").on('click',function () {
             if(result==1){
                 window.location = siteURL+"/post/post";
             }else{
-                alert('Failed!');
+                alert(result)
             }
         });
     }
@@ -87,6 +89,7 @@ $("#posteditButton").on('click',function () {
             if(result==1){
                 window.location = siteURL+"/post/post";
             }else{
+                alert('Failed!');
                 alert(result);
             }
         });

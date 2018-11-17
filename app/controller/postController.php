@@ -21,8 +21,9 @@ class postController extends controller
     public function postaddNowAction(){
         $title = $_POST['title'];
         $text = $_POST['text'];
+        $owner = $this->getAuth()->getUserId();
         $postDb = new post();
-        $postDb ->addPost($title,$text);
+        $postDb ->addPost($title,$text,$owner);
     }
     public function posteditNowAction(){
         $title = $_POST['title'];
